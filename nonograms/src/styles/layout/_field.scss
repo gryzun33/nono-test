@@ -1,0 +1,147 @@
+.cell {
+  width: 27px;
+  height: 27px;
+  border: 1px solid $color-border-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: $color-field-text;
+
+  font-size: 16px;
+  font-family: "Itim";
+
+  .dark-theme & {
+    color: $dark-color-field-text;
+    border: 1px solid $dark-color-border-cell;
+  }
+}
+
+.cell-true {
+  background-color: $color-cell;
+
+  .dark-theme & {
+    background-color: $dark-color-cell;
+  }
+}
+
+.cell-false {
+  background-image: url("./assets/icons/icon-cross.svg");
+  background-size: 80% 80%;
+  background-position: center center;
+}
+
+.field-wrapper {
+  // width: 60%;
+  // height: 100%;
+  background-color: $color-bg-field;
+  @include flex-column(center, center);
+  width: 630px;
+  height: 630px;
+  border-radius: 10px;
+
+  .dark-theme & {
+    background-color: $dark-color-bg-field;
+  }
+}
+
+.game-info {
+  // @include flex;
+  // gap: 20px;
+  font-size: 18px;
+  color: $color-text;
+
+  .dark-theme & {
+    color: $dark-color-text;
+  }
+}
+
+.full-field {
+  touch-action: none;
+  // align-self: center;
+
+  border-collapse: collapse;
+  border: none;
+  border: 3px solid $color-border-cell;
+  border-right: none;
+  border-bottom: none;
+
+  .dark-theme & {
+    border-left: 3px solid $dark-color-border-cell;
+    border-top: 3px solid $dark-color-border-cell;
+  }
+
+  .top-hints-table,
+  .left-hints-table,
+  .main-field-table {
+    border-collapse: collapse;
+    border: none;
+  }
+
+  .top-hints-table {
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:first-child td {
+      border-top: none;
+    }
+  }
+
+  .left-hints-table {
+    tr td:first-child {
+      border-left: none;
+    }
+    tr td:last-child {
+      border-right: none;
+    }
+  }
+
+  .top-hints-table {
+    tr td:first-child {
+      // border-left: 3px solid $color-border-cell;
+      border-left-width: 3px;
+    }
+
+    // ????
+    tr td:nth-child(5n) {
+      // border-right: 3px solid $color-border-cell;
+      border-right-width: 3px;
+    }
+  }
+
+  .left-hints-table {
+    tr:nth-child(5n) td {
+      // border-bottom: 3px solid $color-border-cell;
+      border-bottom-width: 3px;
+    }
+
+    tr:first-child td {
+      // border-top: 3px solid $color-border-cell;
+      border-top-width: 3px;
+    }
+  }
+
+  .main-field-table {
+    tr td:first-child {
+      // border-left: 3px solid $color-border-cell;
+      border-left-width: 3px;
+    }
+    tr td:nth-child(5n) {
+      // border-right: 3px solid $color-border-cell;
+      border-right-width: 3px;
+    }
+
+    tr:nth-child(5n) td {
+      // border-bottom: 3px solid $color-border-cell;
+      border-bottom-width: 3px;
+    }
+
+    tr:first-child td {
+      // border-top: 3px solid $color-border-cell;
+      border-top-width: 3px;
+    }
+  }
+}
+
+.main-field-table {
+  cursor: pointer;
+}
